@@ -9,6 +9,7 @@
 
 //function that checks if document is ready
 $(document).ready(function(){
+	
 	//add event handler
 	$('input').on('change',function(){
         
