@@ -22,9 +22,12 @@ $(document).ready(function(){
 		//calculate the amount that can be spent on tech
         let $amountToSpend = $salary * $percent / 100;
 
+		//round to to two decimal places
+		$amountToSpend  = $amountToSpend.toFixed(2);
+		
 		//append the amount to HTML <p> tag
 		$('#amount').text("$" + $amountToSpend);
-		console.log($amountToSpend);
+		
     });
 });
 
