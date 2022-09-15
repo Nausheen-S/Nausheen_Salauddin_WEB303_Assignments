@@ -19,14 +19,30 @@ $(document).ready(function(){
 		//get the value of percentage from HTML input 
 		let $percent = $('#percent').val();
 
-		//calculate the amount that can be spent on tech
-        let $amountToSpend = $salary * $percent / 100;
-
-		//round to to two decimal places
-		$amountToSpend  = $amountToSpend.toFixed(2);
 		
-		//append the amount to HTML <p> tag
-		$('#amount').text("$" + $amountToSpend);
+		//VALIDATION
+
+		//check if input is number 
+		if(isNaN($salary) || isNaN($percent)){
+
+			//empty the input values
+			$('#yearly-salary').val("");
+			$('#percent').val("");
+		}
+		else {
+			
+			//calculate the amount that can be spent on tech
+			let $amountToSpend = $salary * $percent / 100;
+
+			//round to to two decimal places
+			$amountToSpend  = $amountToSpend.toFixed(2);
+			
+			//append the amount to HTML <p> tag
+			$('#amount').text("$" + $amountToSpend);
+		}
+
+		
+		
 		
     });
 });
