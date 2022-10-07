@@ -6,15 +6,14 @@
 */
 
 $(function () {
-    //check to see if geolocation allowed in system
-    if (!(Modernizr.geolocation)) {
-        $('#locationhere').html("<h1>Your browser does not support geolocation!</h1>");
-    } else {
-        if (navigator.geolocation) {
+    //check to see if geolocation enabled in system
+        if (!(navigator.geolocation)) {
             $('#locationhere').html("<h1>Please enable geolocation!</h1>")
+        } else {
+            
         }
     
-    }
+    
 
 
 
