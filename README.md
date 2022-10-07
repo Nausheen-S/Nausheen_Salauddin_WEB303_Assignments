@@ -4,7 +4,7 @@
 - Using JavaScript location and Web storage APIs to find user location.
 
 ## Technology Used:
-- HTML, CSS, JavaScript, Web storage APIs
+- HTML, CSS, JavaScript, jQuery, Web storage APIs
 
 ## Code Sandbox Link:
 - [Code Sandbox]()
