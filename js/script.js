@@ -9,15 +9,36 @@ $(function () {
     //check to see if geolocation enabled in system
         if (!(navigator.geolocation)) {
             $('#locationhere').html("<h1>Please enable geolocation!</h1>")
-        } else {
-            
+        } else { //runs if geolocation enabled
+            navigator.geolocation.getCurrentPosition(success, fail);
+
+            //if position retrieved
+            function success(position) {
+                let latitude = position.coords.latitude;
+                let longitude = position.coords.longitude;
+                let result = calcDistanceBetweenPoints(localStorage.getItem("lat"), localStorage.getItem("lon"), latitude, longitude);
+                //print to screen
+                $('#locationhere').html("<p>Your current latitude is </p>" + latitude + "<br/><p>Your current longitude is </p>" + longitude);
+                //check if position already present (previously visited)
+                if(localStorage){
+                    $('#locationhere').append("<h1>Welcome Back!</h1>");
+
+                    $('#locationhere').append("<h2>Your previous location was:</h2><p>Your previous latitude: </p>" + localStorage.getItem("lat") + "<p>Your previous longitude: </p>" + localStorage.getItem("lon"))
+                                        .append("<h1>Welcome Back!</h1>")
+                                        .after("<h3>You have travelled :</h3>" + result + " metres or " + (result/1000).toFixed(1) + " km");
+                } else{
+                    $('#locationhere').append("<h1>Welcome to location app!</h1>");
+                }
+                localStorage.setItem("lat", latitude);
+                localStorage.setItem("lon", longitude);
+            };
+
+            //if location cannot be retrieved
+            function fail(){
+                $('#locationhere').html("<h1>Unable to access geolocation!</h1>")
+            }
+
         }
-    
-    
-
-
-
-
     
     // function to calculate the distance in metres between two lat/long pairs on Earth
     // Haversine formula - https://en.wikipedia.org/wiki/Haversine_formula
