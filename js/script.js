@@ -16,17 +16,22 @@ $(function () {
             function success(position) {
                 let latitude = position.coords.latitude;
                 let longitude = position.coords.longitude;
+                let accuracy = position.coords.accuracy;
                 let result = calcDistanceBetweenPoints(localStorage.getItem("lat"), localStorage.getItem("lon"), latitude, longitude);
+
                 //print to screen
-                $('#locationhere').html("<p>Your current latitude is </p>" + latitude + "<br/><p>Your current longitude is </p>" + longitude);
+                $('#locationhere').html("<p>Your current latitude is: " + latitude + "<br/><p>Your current longitude is: " + longitude + "</p>");
+                $('#locationhere').append("<p>The accuracy achieved is: " + accuracy + "</p>");
+
                 //check if position already present (previously visited)
                 if(localStorage){
                     $('#locationhere').append("<h1>Welcome Back!</h1>");
 
-                    $('#locationhere').append("<h2>Your previous location was:</h2><p>Your previous latitude: </p>" + localStorage.getItem("lat") + "<p>Your previous longitude: </p>" + localStorage.getItem("lon"))
+                    $('#locationhere').append("<h2>Your previous location was:</h2><p>Your previous latitude: " + localStorage.getItem("lat") + "</p><p>Your previous longitude: " + localStorage.getItem("lon") + "</p>")
                                         .append("<h1>Welcome Back!</h1>")
-                                        .after("<h3>You have travelled :</h3>" + result + " metres or " + (result/1000).toFixed(1) + " km");
+                                        .after("<h3>You have travelled :</h3>" + result.toFixed(3) + " metres or " + (result/1000).toFixed(2) + " km");
                 } else{
+                    //visiting app for first time
                     $('#locationhere').append("<h1>Welcome to location app!</h1>");
                 }
                 localStorage.setItem("lat", latitude);
