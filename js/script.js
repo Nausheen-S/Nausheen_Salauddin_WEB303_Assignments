@@ -2,7 +2,7 @@
 	Filename: script.js
 	Author: Nausheen Salauddin
 	Student Number: 0805026
-	Date: 7-10-2022
+	Date: 14-10-2022
 */
 
 $(function () {
