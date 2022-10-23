@@ -84,6 +84,31 @@ $(document).ready(function () {
         "margin": "5px auto"    
     })
 
+    //styling button
+       //adding css
+    $('button').css({    
+        "font-weight": "bold",
+        "background-color": "#dfe3e6",
+        "padding": "3px 0 3px 20px",
+        "border": "solid #929ca4 1px",
+        "color": "#cc1c0d",
+        "width": "40%",
+        "cursor": "pointer"
+    })
+
+    //button functionality
+    $('#success').on('click', function () {
+        
+        let $res = contentArray[0].updateContentItem("5","The Midnight Lock","new","Thriller");
+        console.log($res);
+    });
+
+     //button functionality
+    $('#failure').on('click', function () {
+        
+        let $res = contentArray[4].updateContentItem("5","The Midnight Lock","new","Thriller");
+        console.log($res);
+    });
 });
 
 
