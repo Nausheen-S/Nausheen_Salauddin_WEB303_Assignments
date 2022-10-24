@@ -35,6 +35,12 @@ $(document).ready(function () {
                 this.bookName = bookName;
                 this.bookDescription = bookDescription;
                 this.bookGenre = bookGenre;
+
+                //success
+                return true;
+            }
+            else {
+                return false;
             }
         }
     
@@ -96,20 +102,26 @@ $(document).ready(function () {
         "cursor": "pointer"
     })
 
-    //button functionality
+    //button functionality success
     $('#success').on('click', function () {
         
         let $res = contentArray[0].updateContentItem(1,"Another Book","new","Thriller");
-        // if(){
-        //     alert("Update successfull");
-        // }
+        if($res){
+            alert("Update successfull");
+        }
         console.log(contentArray[0].bookName); //value updated as criteria met
     });
 
-     //button functionality
+     //button functionality failure
     $('#failure').on('click', function () {
-        
         let $res = contentArray[4].updateContentItem(4,"The Midnight Lock","new",null);
+        
+        if($res){
+            alert("Update successfull");
+        }
+        else {
+            alert("cannot update due to restrictions");
+        }
         console.log(contentArray[4].bookGenre); //value not updated due to constraints
     });
 });
