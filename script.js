@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
     
         updateContentItem(bookId, bookName, bookDescription, bookGenre){
-            if ((this.bookId === bookId) && (bookName !== null) && (bookDescription !== null) && (bookGenre !== null)) {
+            if ((this.bookId == bookId) && (bookName !== null) && (bookDescription !== null) && (bookGenre !== null)) {
                 this.bookName = bookName;
                 this.bookDescription = bookDescription;
                 this.bookGenre = bookGenre;
@@ -64,16 +64,16 @@ $(document).ready(function () {
 
     //create an array of content items
     let contentArray = [
-        new ContentItem('1',"Village by The Sea","A novel by Anita Desai","Novel"),
-        new ContentItem("2","Murder on Orient Express","A crime novel by Agatha","Thriller"),
-        new ContentItem("3","Killing Floor","A crime novel by Lee Child","Suspense"),
-        new ContentItem("4","The Design of Everyday Things","A UX Design book by Don Norman","Education"),
-        new ContentItem("5","The Midnight Lock","A suspense thriller by Jeffrey","Thriller")
+        new ContentItem(1,"Village by The Sea","A novel by Anita Desai","Novel"),
+        new ContentItem(2,"Murder on Orient Express","A crime novel by Agatha","Thriller"),
+        new ContentItem(3,"Killing Floor","A crime novel by Lee Child","Suspense"),
+        new ContentItem(4,"The Design of Everyday Things","A UX Design book by Don Norman","Education"),
+        new ContentItem(5,"The Midnight Lock","A suspense thriller by Jeffrey","Thriller")
     ];
     
     //call toString on each instance
     for(this.bookId  in contentArray) {
-    contentArray[this.bookId].toString()
+        contentArray[this.bookId].toString()
     }
 
     //adding css
@@ -99,14 +99,18 @@ $(document).ready(function () {
     //button functionality
     $('#success').on('click', function () {
         
-        let $res = contentArray[0].updateContentItem("5","The Midnight Lock","new","Thriller");
-        console.log($res);
+        let $res = contentArray[0].updateContentItem(1,"Another Book","new","Thriller");
+        if(updateContentItem()){
+            alert("Update successfull");
+            console.log(contentArray[0].bookName);
+        }
+        
     });
 
      //button functionality
     $('#failure').on('click', function () {
         
-        let $res = contentArray[4].updateContentItem("5","The Midnight Lock","new","Thriller");
+        let $res = contentArray[4].updateContentItem(4,"The Midnight Lock","new",null);
         console.log($res);
     });
 });
