@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
     
         updateContentItem(bookId, bookName, bookDescription, bookGenre){
-            if ((this.bookId == bookId) && (bookName !== null) && (bookDescription !== null) && (bookGenre !== null)) {
+            if ((this.bookId == bookId) && (bookName != null) && (bookDescription != null) && (bookGenre != null)) {
                 this.bookName = bookName;
                 this.bookDescription = bookDescription;
                 this.bookGenre = bookGenre;
@@ -100,18 +100,17 @@ $(document).ready(function () {
     $('#success').on('click', function () {
         
         let $res = contentArray[0].updateContentItem(1,"Another Book","new","Thriller");
-        if(updateContentItem()){
-            alert("Update successfull");
-            console.log(contentArray[0].bookName);
-        }
-        
+        // if(){
+        //     alert("Update successfull");
+        // }
+        console.log(contentArray[0].bookName); //value updated as criteria met
     });
 
      //button functionality
     $('#failure').on('click', function () {
         
         let $res = contentArray[4].updateContentItem(4,"The Midnight Lock","new",null);
-        console.log($res);
+        console.log(contentArray[4].bookGenre); //value not updated due to constraints
     });
 });
 
