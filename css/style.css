@@ -2,3 +2,8 @@ html, body{
     margin: 0;
     padding: 0;
 }
+
+.accordion-panel p { 
+    display: none; 
+    background-color: yellow;
+}
