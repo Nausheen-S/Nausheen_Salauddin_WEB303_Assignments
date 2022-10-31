@@ -3,7 +3,7 @@ html, body{
     padding: 0;
 }
 
-.accordion-panel p { 
-    display: none; 
+.accordion-panel { 
+    /* display: none;  */
     background-color: yellow;
 }

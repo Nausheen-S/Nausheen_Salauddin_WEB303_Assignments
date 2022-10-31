@@ -5,16 +5,11 @@
     Date: 29-10-2022
 */
 
-$(document).ready(function () {
-    $(".accordian-control").on("click", ".accordion-control", function (e) {
-        //e.preventDefault();
-        if (false == $(this).next().is(':visible')) {
-        
-            $('.accordion-panel').slideUp(300);
-        
-        }
-        $(this).next(".accordion-panel").slideToggle();
-        console.log("hello");
-    });
+$(document).ready(function (e) {
+    $('.accordian-control').on('click', function () {
+        console.log("hi1");
+        console.log( $( this ).text() );
+    })
+    console.log("hi");
 
 });
