@@ -55,6 +55,10 @@ figcaption, figure p {
     font-family:'Times New Roman', Times, serif;
 }
 
+.active {
+    border-bottom: 3px solid rgb(211, 157, 233);
+}
+
 .tab-list {
     display: flex;
     flex-direction: row;
@@ -137,8 +141,14 @@ footer p {
     color: white;
 }
 
-.accordian {
+.accordian-one,
+.accordian-two {
     list-style-type: none;
+}
+
+.accordian-one li,
+.accordian-two li {
+    margin: 30px;
 }
 
 button {

@@ -6,9 +6,12 @@
 */
 
 $(document).ready(function () {
-    let allPanels = $('.accordion > p').hide();
-    $('section:nth-of-type(1).accordion').on('click', function (e) {
-        allPanels.slideUp();
+
+    /***************  ACCORDIAN *****************/
+    let allPanels = $('.accordion-panel').hide();
+    $('.accordion-one > li > button').on('click', function (e) {
+        // allPanels.slideUp();
+        console.log($(this))
         $(this).parent().next().slideDown();
         return false;
     });
@@ -26,4 +29,5 @@ $(document).ready(function () {
         $(panel).show();
         return false;
     });
+
 });
