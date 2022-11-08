@@ -1,12 +1,22 @@
+/*
+    Filename: photoViewer.css
+    Author: Nausheen Salauddin
+    Student Number: 0805026
+    Date: 07-11-2022
+*/
+
 #photo-viewer {
   display: none;
 }
+
 #photo-viewer .photo-box {
   position: relative;
   display: block;
   width: 800px;
   height: 450px;
+  margin: 10px auto;
 }
+
 #photo-viewer .photo-box.is-loading::after {
   content: "Loading...";
   position: absolute;
@@ -15,6 +25,7 @@
   top: calc(50% - 20px);
   left: calc(50% - 50px);
 }
+
 #photo-viewer .photo-box img {
   position: absolute;
   max-width: 100%;
@@ -22,9 +33,17 @@
   top: 50%;
   left: 50%;
 }
+
 #photo-viewer .thumbnail-anchor img {
   width: 80px;
   height: 45px;
 }
-#photo-viewer .thumbnail-anchor img.active {
+
+.photo-box {
+  margin-bottom: 20px;
+  border: 4px solid rgb(99, 32, 32);
+}
+
+.thumbnail-anchor {
+  text-decoration: none;
 }

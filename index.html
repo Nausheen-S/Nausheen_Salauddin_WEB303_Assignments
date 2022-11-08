@@ -1,26 +1,73 @@
+<!DOCTYPE html>
+<!--
+    Filename: index.html
+    Author: Nausheen Salauddin
+    Student Number: 0805026
+    Date: 07-11-2022
+-->
 <html>
 
-<head>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/photoViewer.css" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Photo Viewer and Modal</title>
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/photoViewer.css" rel="stylesheet">
+    </head>
 
-<body>
-    <h1><!-- your name goes here --> Photo Gallery</h1>
-    <div id="photo-viewer">
-        <a href="#" class="photo-box is-loading"></a>
-        <div class="photo-thumbnails">
-            <a href="img/full-sized-photo-1.png" class="thumbnail-anchor active" title="photo 1">
-                <img src="img/thumbnail-photo-1.png" alt="thumbnail 1">
-            </a>
-            <a href="img/full-sized-photo-2.png" class="thumbnail-anchor" title="photo 2">
-                <img src="img/thumbnail-photo-2.png" alt="thumbnail 2">
-            </a>
-            <!-- Add more images here -->
+    <body>
+        <h1>Nausheen Salauddin Photo Gallery</h1>
+        <div id="photo-viewer">
+            <a href="#" class="photo-box is-loading"></a>
+            <div class="photo-thumbnails">
+                <a href="img/lion-fullsize.jpeg" class="thumbnail-anchor active" title="Lion Image">
+                    <img src="img/lion-fullsize.jpeg" class="thumbnail-pic" alt="Lion Image">
+                </a>
+                <a href="img/monkey-fullsize.jpeg" class="thumbnail-anchor" title="Monkey Image">
+                    <img src="img/monkey-fullsize.jpeg" class="thumbnail-pic" alt="Monkey image">
+                </a>
+                <a href="img/panda-fullsize.jpeg" class="thumbnail-anchor" title="Panda Image">
+                    <img src="img/panda-fullsize.jpeg" class="thumbnail-pic" alt="Panda Image">
+                </a>
+                <a href="img/tiger-fullsize.jpeg" class="thumbnail-anchor" title="Tiger Image">
+                    <img src="img/tiger-fullsize.jpeg" class="thumbnail-pic" alt="Tiger Image">
+                </a>
+            </div>
         </div>
-    </div>
-	<script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
+        <div id="references">
+            <h2>References</h2>
+            <pre>
+                <cite>
+                    "All Animals A-Z List - Animal Names | AZ Animals. ""
+                    
+                        a-z-animals.com/animals/monkey/pictures.
+                </cite>
+
+                <cite>
+                    "All Animals A-Z List -Animal Names | AZ Animals." AZ Animals,
+                    
+                        a-z-animals.com/animals.
+                </cite>
+
+                <cite>
+                    "Giant Panda." Wikipedia, upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Giant_Panda_200
+                    
+                        4-03-2.jpg/1200px-Giant_Panda_2004-03-2.jpg.
+                </cite>
+
+                <cite>
+                    "Lion | Smithsonian's National Zoo." Smithsonian's National Zoo and Conservation Biology 
+                    
+                        InstituteSmithsonian's National Zoo, nationalzoo.si.edu/animals/lion.
+                </cite>
+            </pre>
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!--added photo viewer link-->
+        <script type="text/javascript" src="js/photoViewer.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <!--add modal link-->
+        <script type="text/javascript" src="js/modal.js"></script>
+    </body>
 
 </html>

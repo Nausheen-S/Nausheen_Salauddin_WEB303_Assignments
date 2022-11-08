@@ -1,4 +1,47 @@
-#london-wrapper, #windsor-wrapper{
-    display: none;
-    height: 500px;
+/*
+    Filename: style.css
+    Author: Nausheen Salauddin
+    Student Number: 0805026
+    Date: 07-11-2022
+*/
+body {
+    background-color: rgb(218, 217, 191);
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+}
+
+
+h2 {
+    text-align: center;
+    color: brown;
+}
+
+img {
+    width: 800px;
+    height: 450px;
+}
+
+.modal {
+    position:absolute;
+    z-index: 3;
+    background-color: rgb(227, 233, 206);
+}
+
+.modal-close {
+    background-color: brown;
+    padding: 5px;
+    color: white;
+    margin: 3px;
+    border: none;
+    width: 30%;
+    cursor: pointer;
+    float: right;
+}
+
+.photo-thumbnails {
+    margin-left: 20px;
 }

@@ -1,0 +1,53 @@
+
+/*
+    Filename: modal.js
+    Author: Nausheen Salauddin
+    Student Number: 0805026
+    Date: 08-11-2022
+*/
+
+var modal = (function(){                    //Declare modal object
+    var $window = $(window);
+    var $modal = $('<div class="modal"></div>');         //create markup for modal
+    var $content = $('<div class="modal-content"></div>');
+    var $close = $('<button role="button" class="modal-close">close</button>'); //Create close butoon in modal
+    
+    
+    $modal.append($content, $close);
+
+    $close.on('click',function(e){              //If user clicks on close
+        e.preventDefault();                     //Prevent link behavior
+        modal.close();                          //Close the modal
+    })
+
+    return {                                    //Add code to modal
+        center: function(){                     //Define center() method
+            //Calculate distance from top and left of window to center the modal
+            var top = Math.max($window.height()-$modal.outerHeight(),0)/2;
+            var left = Math.max($window.width() -$modal.outerWidth(),0)/2;
+
+            $modal.css({                                 //Set CSS for the modal
+                top: top + $window.scrollTop(),         //Center vertical ly
+                left: left+ $window.scrollLeft()
+                
+            });
+        },
+        open: function(settings) {                           //Define open() method
+            $content.empty().append('<h1>Nausheen Salauddin Photo Gallery</h1>').append(settings.content);      //Set new content of modal
+
+            $modal.css({                                    //Set modal dimensions
+                width: settings.width || 'auto',
+                height: settings.height || 'auto'
+            }).appendTo('body');                           //Add it to the page
+
+            modal.center();                                 //Call center() method
+            $(window).on('resize scroll',modal.center);     //Call it if window resized
+        },
+        close: function(){                                  //Define close() method
+            $content.empty();                               //Remove content from modal
+            $modal.detach();                                //Remove modal from page
+            $window.off('resize', modal.center);            //Remove event handler
+        }
+    };
+
+}());
