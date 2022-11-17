@@ -32,8 +32,8 @@ $(document).ready(function(){
     $('input').attr('id', "search");
 
     //create buttons
-    $('table').after('<button id="btn1">A - M (6)</button>');
-    $('#btn1').after('<button id="btn2">N - Z (1)</button>');
+    $('table').after('<button id="btn1">N - Z (1)</button>');
+    $('#btn1').after('<button id="btn2">A - M (6)</button>');
 
     //get content from json file
     $.ajax({
