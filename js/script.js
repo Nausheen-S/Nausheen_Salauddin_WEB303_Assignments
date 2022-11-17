@@ -26,6 +26,11 @@ $(document).ready(function(){
     $headingRow.append($('<td></td>').text("Marital Status"));
     $headingRow.append($('<td></td>').text("Seasons"));
 
+    //create input box
+    $('table').before('<label>Search by name</label>');
+    $('label').append('<input/>');
+    $('input').attr('id', "search");
+
     //create buttons
     $('table').after('<button id="btn1">A - M (6)</button>');
     $('#btn1').after('<button id="btn2">N - Z (1)</button>');
@@ -58,7 +63,40 @@ $(document).ready(function(){
             });
 
             /************ Search *************/
+            let $names = $('tbody #fname');
+            let $search = $('#search');
+            let cache = [];
+            let trr = $('tr')
 
+            $names.each(function(){
+                cache.push({
+                    element:this,
+                    text: this.textContent.trim().toLowerCase()
+                });
+            });
+            function searchByName(){
+                var query = this.value.trim().toLowerCase();
+
+                cache.forEach(function(name){
+                    var index = 0;
+                    if(query){
+                        index = name.text.indexOf(query);
+                    }
+                    name.element.style.background = index === -1? 'bisque' : 'green';
+                    name.element.style.color = index === -1? 'black' : 'white';
+                    if($(search).val() == ""){
+                        name.element.style.color = 'black';
+                        name.element.style.background = 'bisque';
+                    }
+                });
+
+            }
+            if ('oninput' in $search[0]){
+                $search.on('input',searchByName);
+            } else {
+                $search.on('keyup',searchByName)
+            }
+        
             /************ Filter A - M *************/
             $('#btn1').on('click', function() {
                 $('.row').show();
@@ -79,5 +117,6 @@ $(document).ready(function(){
                     });
             })
         }
+        
     });
 });
