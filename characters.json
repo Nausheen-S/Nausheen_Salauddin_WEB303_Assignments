@@ -4,49 +4,56 @@
 		"lastName": "Gideon",
 		"occupation": " FBI Senior Supervisory Special Agent ",
         "maritalStatus": "Unmarried",
-        "seasons": "1-3"
+        "seasons": "1-3",
+		"firstAppeared": "2005-09-22"
 	},
 	{
 		"firstName": "Aaron",
 		"lastName": "Hotchner",
 		"occupation": "Unit Chief of the BAU",
         "maritalStatus": "Married",
-        "seasons": "1-12"
+        "seasons": "1-12",
+		"firstAppeared": "2005-09-22"
 	},
 	{
 		"firstName": "Derek",
 		"lastName": "Morgan",
 		"occupation": "FBI Supervisory Special Agent",
         "maritalStatus": "Married",
-        "seasons": "1-14"
+        "seasons": "1-14",
+		"firstAppeared": "2005-09-25"
 	},
 	{
 		"firstName": "Jennifer",
 		"lastName": "Jareau",
 		"occupation": "BAU communications liaison",
         "maritalStatus": "Married",
-        "seasons": "1-16"
+        "seasons": "1-16",
+		"firstAppeared": "2005-09-27"
 	},
 	{
 		"firstName": "Penelope",
 		"lastName": "Garcia",
 		"occupation": "BAU technical analyst",
         "maritalStatus": "Unmarried",
-        "seasons": "1-16"
+        "seasons": "1-16",
+		"firstAppeared": "2022-09-22"
 	},
     {
 		"firstName": "David",
 		"lastName": "Rossi",
 		"occupation": "senior supervisory special agent",
         "maritalStatus": "Married",
-        "seasons": "3-16"
+        "seasons": "3-16",
+		"firstAppeared": "2007-10-31"
 	},
     {
 		"firstName": "Alex",
 		"lastName": "Blake",
 		"occupation": "FBI linguistics expert",
         "maritalStatus": "Married",
-        "seasons": "8-9"
+        "seasons": "8-9",
+		"firstAppeared": "2014-05-14"
 	}
 		
 ]
