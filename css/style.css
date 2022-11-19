@@ -32,11 +32,13 @@ table {
 
 td {
     width: 10%;
-    font-size: 20px;
+    
 }
 
-thead td {
+thead td a {
     font-weight: bold;
+    font-size: 20px;
+    color: rgb(87, 54, 5);
 }
 
 td:nth-of-type(3) {

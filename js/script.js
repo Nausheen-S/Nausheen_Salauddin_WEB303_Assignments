@@ -20,11 +20,13 @@ $(document).ready(function(){
     //create heading row
     let $headingRow = $('<tr/>').addClass('headingRow');
     $('thead').append($headingRow);
-    $headingRow.append($('<td></td>').text("First Name"));
-    $headingRow.append($('<td></td>').text("Last Name"));
-    $headingRow.append($('<td></td>').text("Occupation"));
-    $headingRow.append($('<td></td>').text("Marital Status"));
-    $headingRow.append($('<td></td>').text("Seasons"));
+    $headingRow.append($('<td></td>').html("<a href='#'>First Name</a>"));
+    $headingRow.append($('<td></td>').html("<a href='#'>Last Name</a>"));
+    $headingRow.append($('<td></td>').html("<a href='#'>Occupation</a>"));
+    $headingRow.append($('<td></td>').html("<a href='#'>Marital Status</a>"));
+    $headingRow.append($('<td></td>').html("<a href='#'>Seasons</a>"));
+    //added nee=w row
+    $headingRow.append($('<td></td>').html("<a href='#'>First Appeared</a>"));
 
     //get content from json file
     $.ajax({
@@ -49,6 +51,8 @@ $(document).ready(function(){
                 $row.append($('<td></td>').text(value.occupation));
                 $row.append($('<td></td>').text(value.maritalStatus));
                 $row.append($('<td></td>').text(value.seasons));
+                //append new
+                $row.append($('<td></td>').text(value.firstAppeared));
                 //append to table 
                 $('tbody').append($row);   
             });
