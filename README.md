@@ -1,7 +1,7 @@
 # Assignment 9
 
 ## Problem Statement:
-- Implementing jQuery filter for tables.
+- Implementing jQuery sort for tables.
 
 ## Technology Used:
 - HTML, CSS, JavaScript, jQuery
