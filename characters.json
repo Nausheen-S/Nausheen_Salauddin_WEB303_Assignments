@@ -2,15 +2,15 @@
 	{
 		"firstName": "Jason",
 		"lastName": "Gideon",
-		"occupation": " FBI Senior Supervisory Special Agent ",
+		"occupation": "FBI Senior Supervisory Special Agent",
         "maritalStatus": "Unmarried",
-        "seasons": "1-3",
+        "seasons": "1-03",
 		"firstAppeared": "2005-09-22"
 	},
 	{
 		"firstName": "Aaron",
 		"lastName": "Hotchner",
-		"occupation": "Unit Chief of the BAU",
+		"occupation": "Unit Chief Of The BAU",
         "maritalStatus": "Married",
         "seasons": "1-12",
 		"firstAppeared": "2005-09-22"
@@ -26,7 +26,7 @@
 	{
 		"firstName": "Jennifer",
 		"lastName": "Jareau",
-		"occupation": "BAU communications liaison",
+		"occupation": "BAU Communications Liaison",
         "maritalStatus": "Married",
         "seasons": "1-16",
 		"firstAppeared": "2005-09-27"
@@ -34,7 +34,7 @@
 	{
 		"firstName": "Penelope",
 		"lastName": "Garcia",
-		"occupation": "BAU technical analyst",
+		"occupation": "BAU Technical Analyst",
         "maritalStatus": "Unmarried",
         "seasons": "1-16",
 		"firstAppeared": "2022-09-22"
@@ -42,7 +42,7 @@
     {
 		"firstName": "David",
 		"lastName": "Rossi",
-		"occupation": "senior supervisory special agent",
+		"occupation": "Senior Supervisory Special Agent",
         "maritalStatus": "Married",
         "seasons": "3-16",
 		"firstAppeared": "2007-10-31"
@@ -50,7 +50,7 @@
     {
 		"firstName": "Alex",
 		"lastName": "Blake",
-		"occupation": "FBI linguistics expert",
+		"occupation": "FBI Linguistics Expert",
         "maritalStatus": "Married",
         "seasons": "8-9",
 		"firstAppeared": "2014-05-14"

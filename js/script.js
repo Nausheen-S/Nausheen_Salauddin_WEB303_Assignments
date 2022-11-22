@@ -15,26 +15,19 @@ $(document).ready(function () {
     /************ Table *************/
     //create a table
     $('h1').after('<table/>');
-    $('table').addClass("tbl").append('<thead/>');
+    $('table').addClass("sortable").append('<thead/>');
     $('table').append('<tbody/>');
     //create heading row
-    let $headingRow = $('<tr/>').addClass('headingRow');
+    let $headingRow = $('<tr/>');
     $('thead').append($headingRow);
-    // $headingRow.append($('<th></th>').html("<a data-sort='name' href='#'>First Name</a>"));
-    // $headingRow.append($('<th></th>').html("<a data-sort='name' href='#'>Last Name</a>"));
-    // $headingRow.append($('<th></th>').html("<a data-sort='name' href='#'>Occupation</a>"));
-    // $headingRow.append($('<th></th>').html("<a data-sort='name' href='#'>Marital Status</a>"));
-    // $headingRow.append($('<th></th>').html("<a data-sort='duration' href='#'>Seasons</a>"));
-    // //added new row
-    // $headingRow.append($('<th></th>').html("<a data-sort='date' href='#'>First Appeared</a>"));
+    $headingRow.append($('<th></th>').html("<a data-sort='name'>First Name</a>"));
+    $headingRow.append($('<th></th>').html("<a data-sort='name'>Last Name</a>"));
+    $headingRow.append($('<th></th>').html("<a data-sort='name'>Occupation</a>"));
+    $headingRow.append($('<th></th>').html("<a data-sort='name'>Marital Status</a>"));
+    $headingRow.append($('<th></th>').html("<a data-sort='duration'>Seasons</a>"));
+    //added new row
+    $headingRow.append($('<th></th>').html("<a data-sort='date'>First Appeared</a>"));
 
-
-    $headingRow.append($('<th data-sort="name"></th>').text("First Name"));
-    $headingRow.append($('<th data-sort="name"></th>').text("Last Name"));
-    $headingRow.append($('<th data-sort="name"></th>').text("Occupation"));
-    $headingRow.append($('<th data-sort="name"></th">').text("Marital Status"));
-    $headingRow.append($('<th data-sort="duration"></th>').text("Seasons"));
-    $headingRow.append($('<th data-sort="date"></th>').text("First Appeared"));
     //get content from json file
     $.ajax({
         //method
@@ -45,89 +38,100 @@ $(document).ready(function () {
         url: "characters.json",
         // error callback
         error: function () {
-            $('.tbl').empty().append("<h1>Content could not be retrieved</h1>");
+            $('.sortable').empty().append("<h1>Content could not be retrieved</h1>");
         },
         // success
         success: function (response) {
             //loop through reponse received
             $.each(response, function (index, value) {
                 //create row
-                let $row = $('<tr/>').addClass('row');
-                $row.append($('<td id="fname"></td>').text(value.firstName));
-                $row.append($('<td></td>').text(value.lastName));
-                $row.append($('<td></td>').text(value.occupation));
-                $row.append($('<td></td>').text(value.maritalStatus));
-                $row.append($('<td></td>').text(value.seasons));
+                let $bodyRow = $('<tr/>');
+                $bodyRow.append($('<td></td>').text(value.firstName));
+                $bodyRow.append($('<td></td>').text(value.lastName));
+                $bodyRow.append($('<td></td>').text(value.occupation));
+                $bodyRow.append($('<td></td>').text(value.maritalStatus));
+                $bodyRow.append($('<td></td>').text(value.seasons));
                 //append new
-                $row.append($('<td></td>').text(value.firstAppeared));
+                $bodyRow.append($('<td></td>').text(value.firstAppeared));
                 //append to table 
-                $('tbody').append($row);
+                $('tbody').append($bodyRow);
             });
-        }
-    });
-            /************ Sort Table *************/
-            let compare = {
-                name: function (a, b) {
-                    a = a.replace(/^the /i, '');
-                    b = b.replace(/^the /i, '');
 
-                    if (a < b) {
+
+            var compare = {
+                name: function(a,b){
+                    a = a.replace(/^the /i, '');
+                    b =  b.replace(/^the /i, '');
+            
+                    if (a < b){
                         return -1;
                     } else {
-                        return a > b ? 1 : 0;
+                        return a>b ? 1 : 0;
                     }
                 },
-                duration: function (a, b) {
-                    a = a.split(':');
-                    b = b.split(':');
-
-                    a = Number(a[0]) * 60 + Number(a[1]);
-                    b = Number(b[0]) * 60 + Number(b[1]);
-
+                duration: function(a,b){
+                    a = a.split('-');
+                    b = b.split('-');
+            
                     return a - b;
-
+            
                 },
-                date: function (a, b) {
+                date: function(a,b){
                     a = new Date(a);
                     b = new Date(b);
-
+            
                     return a - b;
                 }
             };
+            
+            $('.sortable').each(function(){
+                var $table = $(this);
+                var $tbody = $table.find('tbody');
+                var $controls = $table.find('th a');
+                var rows = $tbody.find('tr').toArray();
+                const deepCopy = [...rows];
 
-            $('.sortable').each(function () {
-                let $table = $(this);
-                let $tbody = $table.find('tbody');
-                let $controls = $table.find('th');
-                let rows = $tbody.find('tr').toArray();
+                $controls.on('click',function(){
+                    var $header = $(this);
+                    var order = $header.data('sort');
+                    var column;
 
-                $controls.on('click', function () {
-                    console.log('hello')
-                    let $header = $(this);
-                    let order = $header.data('sort');
-                    let column;
-                    console.log($(this))
-                    //If selected item has ascending or descending class, reverse contents
-                    if ($header.is('.ascending') || $header.is('.descending')) {
-                        $header.toggleClass('ascending descending');
-                        $tbody.append(rows.reverse());
-                    } else {
+                    if ($header.is('.ascending')){
+                        $header.removeClass('ascending no-sort');
+                            $header.addClass('descending');
+    
+                            $tbody.append(rows.reverse());
+                        
+            
+                    } else if($header.is('.descending')){
+                        
+                        $header.removeClass('descending ascending');
+                        $header.addClass('no-sort');
+                        $tbody.append(deepCopy);
+                    }
+                    else {
                         $header.addClass('ascending');
+                        $header.removeClass('no-sort');
                         //Remove asc or desc from all other headers
-                        $header.siblings().removeClass('ascending descending');
-
-                        if (compare.hasOwnProperty(order)) {
+                        $header.siblings().removeClass('ascending descending no-sort');
+                        
+                        if (compare.hasOwnProperty(order)){
                             column = $controls.index(this);
-                            rows.sort(function (a, b) {
+                            rows.sort(function(a,b){
                                 a = $(a).find('td').eq(column).text();
                                 b = $(b).find('td').eq(column).text();
-                                console.log('a: ', a, '   b: ', b)
-                                return compare[order](a, b);
+                                return  compare[order](a,b);
+
                             });
                             $tbody.append(rows);
                         }
                     }
                 })
             })
-        
-});
+
+        }
+    }); 
+
+
+
+})

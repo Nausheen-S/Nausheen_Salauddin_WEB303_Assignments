@@ -39,6 +39,7 @@ thead th a {
     font-weight: bold;
     font-size: 20px;
     color: rgb(87, 54, 5);
+    cursor: pointer;
 }
 
 td:nth-of-type(3) {
@@ -55,4 +56,21 @@ button {
     color: rgb(87, 54, 5);
     font-weight: bold;
     cursor: pointer;
+}
+
+table thead tr th:after {
+	position: absolute;
+	right: 2px;
+}
+
+a.ascending::after {
+	content: "\25B2";
+}
+
+a.descending:after {
+	content: "\25BC";
+}
+
+a.no-sort:after {
+	content: "";
 }
