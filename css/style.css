@@ -1,0 +1,76 @@
+/************************************************************************************************************************************************
+************************************************************************************************************************************************
+************************************************************************
+
+Filename: style.css
+Author: Nausheen Salauddin
+Student Number: 0805026
+Date: 25-11-2022
+Copyright: 2022 - All rights reserved
+
+************************************************************************
+**********************************************************************
+**********************************************************************/
+
+body {
+    background-color: rgba(238, 81, 128, 0.85);
+}
+
+h1 {
+    font-size: 3em;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+form {
+    margin: auto;
+    width: 100%;
+}
+
+label {
+    font-size: 22px;
+    color: white;
+    display: block;
+}
+
+input, select{
+    margin: 15px 10px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 0;
+}
+
+input :not(input[type=checkbox]) {
+    width: 40%;
+}
+
+#termLabel {
+    display: inline;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 30%;
+    height: 3.5em;
+    align-self: center;
+    border-radius: 100px;
+    border: 0;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+
+

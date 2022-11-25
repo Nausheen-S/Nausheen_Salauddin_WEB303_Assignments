@@ -20,22 +20,27 @@
         </h1>
         <form id="validateForm" action="/register" method="post">
 
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username"/>
+            <label for="username">Username
+                <input type="text" name="username" id="username"/>
+            </label>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password"/>
+            <label for="password">Password
+                <input type="password" name="password" id="password"/>
+            </label>
 
-            <label for="confirmPassword"> Confirm Password</label>
-            <input type="confirmPassword" name="confirmPassword" id="confirmPassword"/>
+            <label for="confirmPassword"> Confirm password
+                <input type="confirmPassword" name="confirmPassword" id="confirmPassword"/>
+            </label>
 
-            <input type="checkbox" value="terms" name="terms" id="terms"/>
-            <label for="terms">I agree to the terms and conditions</label>
-            
-            <label for="country">Country</label>
-            <select id="country" name="country">
-                <option value="defaultOption" default>Select your country</option>
-            </select>
+            <label for="terms">I agree to the terms and conditions
+                <input type="checkbox" value="terms" name="terms" id="terms"/>
+            </label>
+
+            <label id="termLabel" for="country">Country
+                <select id="country" name="country">
+                    <option value="defaultOption" default>Select your country</option>
+                </select>
+            </label>
 
             <input type="submit" value="Submit" id="submit"/>
         </form>
