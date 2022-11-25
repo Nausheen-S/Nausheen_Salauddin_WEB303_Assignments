@@ -1,16 +1,47 @@
-<html>
+<!DOCTYPE html>
+<!--
+	Filename: index.html
+	Author: Nausheen Salauddin
+	Student Number: 0805026
+	Date: 25-11-2022
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>jQuery Form Validation</title>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
 
-<head>
-    <link href="css/style.css" rel="stylesheet">
-</head>
+    <body>
+        <h1>
+            <!-- your name goes here -->
+        </h1>
+        <form id="validateForm" action="/register" method="post">
 
-<body>
-    <h1>
-        <!-- your name goes here -->
-    </h1>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username"/>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"/>
+
+            <label for="confirmPassword"> Confirm Password</label>
+            <input type="confirmPassword" name="confirmPassword" id="confirmPassword"/>
+
+            <input type="checkbox" value="terms" name="terms" id="terms"/>
+            <label for="terms">I agree to the terms and conditions</label>
+            
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="defaultOption" default>Select your country</option>
+            </select>
+
+            <input type="submit" value="Submit" id="submit"/>
+        </form>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
 
 </html>
